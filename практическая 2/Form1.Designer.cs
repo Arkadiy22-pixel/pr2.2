@@ -76,6 +76,7 @@
             this.очиститьToolStripMenuItem.Name = "очиститьToolStripMenuItem";
             this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.очиститьToolStripMenuItem.Text = "Очистить";
+            this.очиститьToolStripMenuItem.Click += new System.EventHandler(this.очиститьToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -89,6 +90,7 @@
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 

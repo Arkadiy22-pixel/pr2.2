@@ -102,5 +102,17 @@ namespace практическая_2
         {
             Close();
         }
+
+        private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxAddedItems.Clear();
+            progressBarCapacity.Value = 0;
+            comboBoxОbject.SelectedIndex = -1;
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
