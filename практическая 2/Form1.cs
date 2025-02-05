@@ -13,6 +13,7 @@ namespace практическая_2
 {
     public partial class Form1 : Form
     {
+
         Dictionary<string, int> ObjectsInBackpack;
         public Form1()
         {
@@ -20,6 +21,10 @@ namespace практическая_2
             StartPosition = FormStartPosition.CenterScreen;
             progressBarCapacity.Minimum = 0;
             progressBarCapacity.Maximum = 10000;
+            textBoxAddedItems.ReadOnly = true;
+            label1.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+            label3.BackColor = Color.Transparent;
         }
 
 
@@ -48,27 +53,54 @@ namespace практическая_2
                 comboBoxОbject.Items.Add(objects);
             comboBoxОbject.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            
-            int value = 0;            
-            if (ObjectsInBackpack.TryGetValue(comboBoxОbject.SelectedItem.ToString(), out value))
-            {                
-                progressBarCapacity.Value += value;    
+            try
+            {
+                int value = 0;
+                if (ObjectsInBackpack.TryGetValue(comboBoxОbject.SelectedItem.ToString(), out value))
+                {
+                    if (progressBarCapacity.Value < 100000) { progressBarCapacity.Value += value; }
+
+                }
+                if (comboBoxОbject.SelectedItem != null)
+                {
+                    textBoxAddedItems.AppendText(comboBoxОbject.SelectedItem.ToString() + ",");
+                }
+                comboBoxОbject.SelectedIndex = -1;
             }
-            //if (ObjectsInBackpack.TryGetValue(comboBoxОbject.SelectedItem))
-            comboBoxОbject.SelectedIndex = -1;
-            //if (progressBarCapacity.Value > 12)
-            //    MessageBox.Show("Рюкзак заполнен!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            catch (NullReferenceException)
+            { MessageBox.Show("Выберите один предмет из списка чтобы добавтить его в рюкзак!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            catch (ArgumentOutOfRangeException) { MessageBox.Show("Рюкзак заполнен!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int value = 0;
             if (ObjectsInBackpack.TryGetValue(comboBoxОbject.SelectedItem.ToString(), out value))
-            { progressBarCapacity.Value -= value; }
+            {
+                List<string> AddedItems = new List<string>();
+                string text = textBoxAddedItems.Text;
+                AddedItems = text.Split(',').Select(s => s.Trim()).Where(s => !string.IsNullOrEmpty(s)).ToList();
+                if (progressBarCapacity.Value >= value)
+                    progressBarCapacity.Value -= value;
+                if (progressBarCapacity.Value == 0) progressBarCapacity.Value = 0;
+                if (comboBoxОbject.SelectedItem != null)
+                {
+                    string itemComboBox = comboBoxОbject.SelectedItem.ToString();
+                    if (AddedItems.Contains(itemComboBox)) { AddedItems.Remove(itemComboBox); }
+                    else { MessageBox.Show("Этого предмета нет в рюкзаке!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                    textBoxAddedItems.Clear();
+                    foreach (string item in AddedItems)
+                        textBoxAddedItems.AppendText(item + ",");
+                    comboBoxОbject.SelectedIndex = -1;
+                }
+            }
         }
 
+        private void buttonСancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

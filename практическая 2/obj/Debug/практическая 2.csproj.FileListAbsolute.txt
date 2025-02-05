@@ -8,3 +8,13 @@ D:\Users\1213-7\Documents\2-ИСП\ОП.04\мустафинов\практиче
 D:\Users\1213-7\Documents\2-ИСП\ОП.04\мустафинов\практическая 2\obj\Debug\практическая 2.csproj.CoreCompileInputs.cache
 D:\Users\1213-7\Documents\2-ИСП\ОП.04\мустафинов\практическая 2\obj\Debug\практическая 2.exe
 D:\Users\1213-7\Documents\2-ИСП\ОП.04\мустафинов\практическая 2\obj\Debug\практическая 2.pdb
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\bin\Debug\практическая 2.exe.config
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\bin\Debug\практическая 2.exe
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\bin\Debug\практическая 2.pdb
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\obj\Debug\практическая 2.csproj.AssemblyReference.cache
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\obj\Debug\практическая_2.Form1.resources
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\obj\Debug\практическая_2.Properties.Resources.resources
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\obj\Debug\практическая 2.csproj.GenerateResource.cache
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\obj\Debug\практическая 2.csproj.CoreCompileInputs.cache
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\obj\Debug\практическая 2.exe
+C:\Users\Аркадий\Desktop\коды\pr 2.2\pr2.2-main\практическая 2\obj\Debug\практическая 2.pdb
